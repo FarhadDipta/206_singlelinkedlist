@@ -50,6 +50,10 @@ void addNote() {
     previous -> next = nodeBaru;
 }
 
+bool serachNode () {
+
+}
+
 int main(){
 
 }
