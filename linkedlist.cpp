@@ -7,6 +7,12 @@ struct Node {
     Node* next;
 };
 
+Node* START = NULL;
+
+void addNote() {
+
+}
+
 int main(){
 
 }
