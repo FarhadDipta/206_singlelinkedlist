@@ -9,7 +9,7 @@ struct Node {
 
 Node* START = NULL;
 
-void addNote() {
+void addNode() {
     int nim;
     string nama;
     Node* nodeBaru = new Node();
@@ -131,5 +131,61 @@ void searchData(){
 }
 
 int main(){
+    int pilihan;
+    do
+    {
+        try
+        {
+            cout << "1. Tambah data" << endl;
+            cout << "2. Hapus data" << endl;
+            cout << "3. Tampilkan data" << endl;
+            cout << "4. Cari data" << endl;
+            cout << "5. Keluar" << endl;
+            cout << "Pilihan : ";
+            cin >> pilihan;
+            switch (pilihan)
+            {
+            case 1 : 
+                addNode();
+                cout << "Data Berhasil Ditambahkan" << endl;
+                system("pause");
+                system("cls");
+            case 2 :
+                if (listEmpty())
+                {
+                    cout << "List Kosong" << endl;
+                    system("pause");
+                    system("cls");
+                }
 
+                int nim;
+                cout << "Masukan NIM : ";
+                cin >> nim;
+                if (deleteNode(nim)) {
+                    cout << "nim : " << nim << " berhasil dihapus" << endl;
+                    system("pause");
+                    system("cls");
+                }
+                else
+                    cout << "Data tidak ditemukan" << endl;
+                break;
+            case 3 :
+                traverse();
+                break;
+            case 4 :
+                searchData();
+                break;
+            case 5 :
+                break;
+            default : 
+                cout << "Pilihan tidak ada" << endl;
+                break;
+            }
+        }
+        catch (exception e)
+        {
+            cout << "Terjadi Kesalahan" << endl;
+        }
+    } while (pilihan != 5);
+    
 }
