@@ -10,7 +10,9 @@ struct Node {
 Node* START = NULL;
 
 void addNote() {
-
+    int nim;
+    string nama;
+    Node* nodeBaru = new Node();
 }
 
 int main(){
